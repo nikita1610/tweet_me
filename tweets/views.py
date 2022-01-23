@@ -1,16 +1,22 @@
+import stat
 from django.shortcuts import render
-from django.http import HttpResponse,Http404
+from django.http import HttpResponse,Http404,JsonResponse
 # Create your views here.
 
 from .models import Tweet
 
 def home_view(request,*args,**kwargs):
-    print(args,kwargs)
-    return HttpResponse("<h1>Hello World </h1>")
+    return render(request,"pages/home.html",context={},status=200)
 
 def tweet_detail_view(request,tweet_id,*args,**kwargs):
     try:
+        data = {
+            "id" : tweet_id
+        }
         obj = Tweet.objects.get(id=tweet_id)
+        data['content'] = obj.content
+        status=200
     except Exception as e:
-        raise Http404
-    return HttpResponse(f"<h1>Hello {tweet_id} - {obj.content}</h1>")
+        data["message"] = "Not Found"
+        status=404
+    return JsonResponse(data,status=status)
