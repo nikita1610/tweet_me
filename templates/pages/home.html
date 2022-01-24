@@ -10,6 +10,12 @@
 
 
 <script>
+    
+    function formatTweetElement(tweet){
+        var formattedTweet = "<div class = 'mb-4'><h1>" + ListedItems[i].id + "</h1>" + "<p>" + ListedItems[i].content + "</p></div>"
+        return formatTweet
+    }
+
     const tweetsElement = document.getElementById("tweets")
     const xhr = new XMLHttpRequest()
     const method = 'GET'
@@ -26,7 +32,7 @@
         var i = 0 
         for(i=0;i<ListedItems.length;i++){
             console.log(ListedItems[i])
-            var current = "<div class = 'mb-4'><h1>" + ListedItems[i].id + "</h1>" + "<p>" + ListedItems[i].content + "</p></div>"
+            var current = formatTweetElement(ListedItems[i])
             finalTweetStr += current
         }
         tweetsElement.innerHTML = finalTweetStr
