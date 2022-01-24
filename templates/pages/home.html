@@ -10,10 +10,10 @@
 
 
 <script>
-    
+
     function formatTweetElement(tweet){
-        var formattedTweet = "<div class = 'mb-4'><h1>" + ListedItems[i].id + "</h1>" + "<p>" + ListedItems[i].content + "</p></div>"
-        return formatTweet
+        var formattedTweet = "<div class = 'mb-4'><h1>" + tweet.id + "</h1>" + "<p>" + tweet.content + "</p></div>"
+        return formattedTweet
     }
 
     const tweetsElement = document.getElementById("tweets")
