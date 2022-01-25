@@ -5,7 +5,7 @@ from django.template import context
 # Create your views here.
 
 from .models import Tweet
-from .views import TweetForm
+from .forms import TweetForm
 
 def home_view(request,*args,**kwargs):
     return render(request,"pages/home.html",context={},status=200)
