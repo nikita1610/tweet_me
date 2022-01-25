@@ -9,9 +9,10 @@
     </div>
 </div>
 
-<div id = 'tweets'>
+ <div id = 'tweets'>
+     Loading....
+ </div>
 
-</div>
 
 
 <script>
@@ -25,8 +26,8 @@
     }
 
     function formatTweetElement(tweet){
-        var formattedTweet = "<div class = 'mb-4 tweet' id = 'tweet - " + tweet.id + "'><p>" + tweet.content + "</p><div class = 'btn-group'>" + LikeBtn(tweet) +"</p></div>"
-                return formattedTweet
+        var formattedTweet = "<div class = 'col-12 col-md-10 border mx-auto rounded py-3 mb-4 tweet' id = 'tweet - " + tweet.id + "'><p>" + tweet.content + "</p><div class = 'btn-group'>" + LikeBtn(tweet) +"</p></div></div>"
+        return formattedTweet
     }
 
     const tweetsElement = document.getElementById("tweets")
