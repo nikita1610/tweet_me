@@ -40,6 +40,8 @@
         xhr.onload = function(){
             const serverResponse = xhr.response
             console.log(serverResponse)
+            const tweetsEl = document.getElementById("tweets")
+            loadTweets(tweetsEl)
         }
         xhr.send(myFormData)
     }
